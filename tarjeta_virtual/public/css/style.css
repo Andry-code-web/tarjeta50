@@ -1,0 +1,291 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Josefin+Slab:ital,wght@0,100;0,600;1,100&family=Rancho&family=Tillana&display=swap');
+
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos del banner */
+.banner {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  /* Hace que el banner ocupe el 100% de la altura de la ventana */
+}
+
+.video_banner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  /* Ajusta el tamaño del video manteniendo la proporción y cubriendo el contenedor */
+  z-index: -1;
+  opacity: 0.7;
+  /* Ajusta la opacidad según tus preferencias */
+}
+
+/* ... (código previo) ... */
+
+.contenedor {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  color: white;
+}
+
+/* Nuevo div intermedio */
+.opacidad {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.705);
+  z-index: 1;
+  /* Colócalo detrás del contenido de info */
+}
+
+/* Contenido de información y estilos de diseño para computadoras */
+.content_info {
+  display: flex;
+  justify-content: space-between;
+  /* Alinea el texto e imagen */
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  /* Asegura que esté encima del fondo opaco */
+  padding: 20px;
+  box-sizing: border-box;
+  max-width: 100%;
+  gap: 3rem;
+}
+
+.info {
+  height: 40rem;
+  width: 60rem;
+  display: flex;
+  max-width: 50%;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.name_title {
+  margin-bottom: 15px;
+}
+
+.name_title h2 {
+  font-family: 'Cinzel Decorative';
+  font-size: 6rem;
+  margin: 0;
+  background: linear-gradient(to top, #ad971c, #f3da4e 50%, #ad971c);
+  /* Gradiente dorado */
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.name_title h1 {
+  font-family: 'Josefin Slab';
+  font-size: 5.5rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(to top, #ad971c, #ffea76 50%, #ad971c);
+  /* Gradiente dorado */
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.pal_agrade p {
+  font-family: 'Tillana';
+  font-size: 1rem;
+  line-height: 2;
+  margin: 0;
+}
+
+.imagen img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  animation: levitate 2s ease-in-out infinite alternate;
+}
+
+@keyframes levitate {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-15px);
+  }
+}
+
+#botonAudio {
+  position: absolute;
+  top: 65%;
+  right: 70%;
+  z-index: 100;
+  background: none;
+  border: none;
+}
+
+#botonAudio i{
+  font-size: 3rem;
+  background: linear-gradient(to top, #ad971c, #ffea76, #ad971c);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.cuerpo {
+  width: 100%;
+  height: 100vh;
+  background-color: aqua;
+}
+
+
+/* Consulta de medios para tabletas */
+@media only screen and (max-width: 1024px) {
+  .content_info {
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    gap: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .opacidad {
+    background-color: rgba(0, 0, 0, 0.85);
+    /* Ajusta la opacidad para mejorar la legibilidad del texto */
+  }
+
+  .info {
+    height: 30rem;
+    max-width: 98%;
+    z-index: 2;
+    /* Asegura que la información esté encima del fondo opaco */
+  }
+
+  .name_title{
+    margin-bottom: 8px;
+  }
+
+  .name_title h2 {
+    font-size: 4.5rem;
+  }
+
+  .name_title h1 {
+    font-size: 3rem;
+  }
+
+  .pal_agrade p {
+    font-size: .8rem;
+  }
+
+  .imagen img {
+    max-width: 47%;
+    align-self: center;
+    margin-top: 2rem;
+  }
+
+  .video_banner {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  @keyframes levitate {
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+
+  #botonAudio {
+    position: absolute;
+    top: 43.5%;
+    left: 45%;
+  }
+
+  #botonAudio i{
+    font-size: 2.4rem;
+  }
+
+}
+
+/* Consulta de medios para laptops */
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  .content_info {
+    padding: 15px;
+  }
+
+  .name_title h2,
+  .name_title h1 {
+    font-size: 4.5rem;
+  }
+
+  .pal_agrade p {
+    font-size: 1.2rem;
+  }
+
+  .imagen img {
+    max-width: 300px;
+  }
+
+  @keyframes levitate {
+    100% {
+      transform: translateY(-12px);
+    }
+  }
+}
+
+@media (max-width: 289px) {
+
+  .name_title{
+    margin-bottom: 5px;
+  }
+
+  .info {
+    max-width: 100%;
+  }
+  .name_title h2 {
+    font-size: 3rem;
+  }
+
+  .name_title h1 {
+    font-size: 2rem;
+  }
+
+  .pal_agrade p {
+    font-size: .7rem;
+  }
+
+  .pal_agrade p .activar{
+    display: none;
+  }
+
+  .imagen{
+    margin-top: 1rem;
+  }
+
+  .imagen img{
+    max-width: 60%;
+    align-self: center;
+    margin-top: 12px;
+  }
+
+  #botonAudio {
+    position: absolute;
+    top: 36.5%;
+    left: 45%;
+  }
+
+  #botonAudio i{
+    font-size: 1.8rem;
+  }
+}
